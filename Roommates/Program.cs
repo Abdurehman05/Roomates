@@ -133,6 +133,15 @@ namespace Roommates
                         Console.Write("Press any key to continue");
                         Console.ReadKey();
                         break;
+                    case ("Show list of  Unassigned Chores"):
+                        List<Chore> uChores = choreRepo.GetUnassignedChores();
+                        foreach (Chore c in uChores)
+                        {
+                            Console.WriteLine($"{c.Id} | - {c.Name}");
+                        }
+                        Console.Write("Press any key to continue");
+                        Console.ReadKey();
+                        break;
                     case ("Search for roommate"):
                         Console.Write("Roommate Id: ");
                         int roommateId = int.Parse(Console.ReadLine());
@@ -165,6 +174,7 @@ namespace Roommates
             "Show all chores",
             "Search for chore",
             "Add a chore",
+            "Show list of  Unassigned Chores",
             "Search for roommate",
             "Exit"
         };
